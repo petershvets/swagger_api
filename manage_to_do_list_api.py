@@ -232,7 +232,27 @@ def add_new_task(run_properties, list_id):
         debug("Unknown code {}".format(resp_code), _WARNING)
 
 
+def update_task_status(run_properties, list_id, task_id):
+    """
+    :param run_properties:
+    :param list_id:
+    :param task_id:
+    :return: response header
+    """
+    payload = {
+                "completed": True
+              }
 
+    r = run_api(run_properties, "UPDATE_TASK_STATUS", list_id, task_id, in_payload=payload)
+    resp_code = get_response_code(r)
+    if resp_code == 201:
+        res_header = r.headers
+        debug("Updated task: {}".format(res_header))
+        return res_header
+    elif resp_code == 400:
+        debug("Invalid input, object invalid", _WARNING)
+    else:
+        debug("Unknown code {}".format(resp_code), _WARNING)
 
 def main():
     # need to disable security warning
@@ -280,6 +300,8 @@ def main():
     debug("Add New task to the list", _INFO)
     add_new_task(run_properties, 'd290f1ee-6c54-4b01-90e6-d701748f0851')
 
+    debug("Update Task", _INFO)
+    update_task_status(run_properties, "d290f1ee-6c54-4b01-90e6-d701748f0851", "0e2ac84f-f723-4f24-878b-44e63e7ae580")
 # Main execution.
 if __name__ == '__main__':
     main()
