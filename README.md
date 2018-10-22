@@ -1,6 +1,6 @@
 # swagger_api
 
-### Main application: manage_to_do_list_api.py
+### Client application: manage_to_do_list_api.py
 ### Application requires properties file in json format.
 ### Default file name run.properties.json
 
