@@ -17,3 +17,5 @@
 # Folder python-flask-server-generated
 ## Contains fixed server SDK. It is possible now to run it as:
 ## >python -m swagger_server
+## and explore API from:
+## http://localhost:8080/aweiker/ToDo/1.0.0/ui/#/todo
