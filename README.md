@@ -13,3 +13,7 @@
 
 
 #### Developed with Python3.6.6 on Windows 10
+
+# Folder python-flask-server-generated
+## Contains fixed server SDK. It is possible now to run it as:
+## >python -m swagger_server
